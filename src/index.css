@@ -26,10 +26,10 @@ body {
 .btn {
   border-radius: 3px;
   font-weight: 700;
-  color: white;
-  border: none;
+
   text-transform: capitalize;
 }
 .body-btn:hover {
   background-color: #54595f;
+  border-color: #54595f;
 }
