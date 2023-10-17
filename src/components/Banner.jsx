@@ -18,7 +18,7 @@ const Banner = () => {
             <button className="btn body-btn bg-[#54595f] border-[#54595f] hover:text-white text-white text-base md:text-xl">
               <Link to="/login">Login</Link>
             </button>
-            <button className="btn body-btn bg-transparent text-[#0a0b09] hover:text-white border-[#9dd4b9] text-base md:text-xl">
+            <button className="btn body-btn bg-transparent text-[#0a0b09] hover:text-white border-[#54595f] text-base md:text-xl">
               <Link to="/register">Register</Link>
             </button>
           </div>
