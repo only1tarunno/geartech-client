@@ -10,7 +10,7 @@ const ProductsCatBanner = () => {
       <div id="slide1" className="carousel-item relative w-full">
         <div
           className="hero rounded-none overflow-hidden"
-          style={{ "background-image": `url(${img1})` }}
+          style={{ backgroundImage: `url(${img1})` }}
         >
           <div className="hero-overlay"></div>
           <div className="hero-content text-center text-neutral-content">
@@ -45,7 +45,7 @@ const ProductsCatBanner = () => {
       <div id="slide2" className="carousel-item relative w-full">
         <div
           className="hero rounded-none overflow-hidden"
-          style={{ "background-image": `url(${img2})` }}
+          style={{ backgroundImage: `url(${img2})` }}
         >
           <div className="hero-overlay"></div>
           <div className="hero-content text-center text-neutral-content">
@@ -79,7 +79,7 @@ const ProductsCatBanner = () => {
       <div id="slide3" className="carousel-item relative w-full">
         <div
           className="hero rounded-none overflow-hidden"
-          style={{ "background-image": `url(${img3})` }}
+          style={{ backgroundImage: `url(${img3})` }}
         >
           <div className="hero-overlay"></div>
           <div className="hero-content text-center text-neutral-content">
@@ -113,7 +113,7 @@ const ProductsCatBanner = () => {
       <div id="slide4" className="carousel-item relative w-full">
         <div
           className="hero rounded-none overflow-hidden"
-          style={{ "background-image": `url(${img4})` }}
+          style={{ backgroundImage: `url(${img4})` }}
         >
           <div className="hero-overlay"></div>
           <div className="hero-content text-center text-neutral-content">

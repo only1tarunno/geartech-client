@@ -5,6 +5,10 @@ const ProductDetails = () => {
   const product = useLoaderData();
   const { _id, photo, name, brand, productType, price, rating, description } =
     product;
+
+  const handleAddToCart = (id) => {
+    console.log(id);
+  };
   return (
     <div className="container mx-auto px-5 lg:px-0 flex items-center justify-between flex-wrap py-10 md:py-20 space-y-5 md:space-y-16">
       <div className="w-full lg:w-1/2">
@@ -27,40 +31,48 @@ const ProductDetails = () => {
           </span>
           <span className="font-medium">{price}</span>
         </p>
-        <p>
+        <div>
           <div className="rating rating-md">
             <input
               type="radio"
               name={`rating-${_id}`}
               className="mask mask-star-2 bg-orange-400"
-              checked={rating == 1}
+              defaultChecked={rating == 1}
             />
             <input
               type="radio"
               name={`rating-${_id}`}
               className="mask mask-star-2 bg-orange-400"
-              checked={rating == 2}
+              defaultChecked={rating == 2}
             />
             <input
               type="radio"
               name={`rating-${_id}`}
               className="mask mask-star-2 bg-orange-400"
-              checked={rating == 3}
+              defaultChecked={rating == 3}
             />
             <input
               type="radio"
               name={`rating-${_id}`}
               className="mask mask-star-2 bg-orange-400"
-              checked={rating == 4}
+              defaultChecked={rating == 4}
             />
             <input
               type="radio"
               name={`rating-${_id}`}
               className="mask mask-star-2 bg-orange-400"
-              checked={rating == 5}
+              defaultChecked={rating == 5}
             />
           </div>
-        </p>
+        </div>
+        <div>
+          <button
+            onClick={() => handleAddToCart(_id)}
+            className="btn body-btn bg-[#54595f] hover:bg-[#3b3e42] border-[#54595f] hover:text-white text-white text-base md:text-xl"
+          >
+            Add to Cart
+          </button>
+        </div>
       </div>
       <div className="w-full">
         <h2 className="pb-3 text-center text-[#0a0b09] text-xl lg:text-3xl font-bold">

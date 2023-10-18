@@ -36,40 +36,40 @@ const Product = ({ product }) => {
             </span>{" "}
             Price: <span className="font-medium ml-1">{price}</span>
           </p>
-          <p>
+          <div>
             <div className="rating rating-md">
               <input
                 type="radio"
                 name={`rating-${_id}`}
                 className="mask mask-star-2 bg-orange-400"
-                checked={rating == 1}
+                defaultChecked={rating == 1}
               />
               <input
                 type="radio"
                 name={`rating-${_id}`}
                 className="mask mask-star-2 bg-orange-400"
-                checked={rating == 2}
+                defaultChecked={rating == 2}
               />
               <input
                 type="radio"
                 name={`rating-${_id}`}
                 className="mask mask-star-2 bg-orange-400"
-                checked={rating == 3}
+                defaultChecked={rating == 3}
               />
               <input
                 type="radio"
                 name={`rating-${_id}`}
                 className="mask mask-star-2 bg-orange-400"
-                checked={rating == 4}
+                defaultChecked={rating == 4}
               />
               <input
                 type="radio"
                 name={`rating-${_id}`}
                 className="mask mask-star-2 bg-orange-400"
-                checked={rating == 5}
+                defaultChecked={rating == 5}
               />
             </div>
-          </p>
+          </div>
         </div>
         <div className="mt-4 flex items-center justify-center gap-5">
           <Link to={`/product/${_id}`}>
@@ -77,7 +77,7 @@ const Product = ({ product }) => {
               Details
             </button>
           </Link>
-          <Link to={`/product/${_id}`}>
+          <Link to={`/updateProduct/${_id}`}>
             <button className="btn body-btn bg-transparent text-[#0a0b09] hover:text-white border-[#54595f] text-base md:text-xl">
               Update
             </button>

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const SingleCategory = ({ brand }) => {
   return (
-    <Link className="inline-block" to={`/products/${brand.name}`}>
+    <Link className="inline-block" to={`/brand/${brand.name}`}>
       <div className="card h-full bg-base-100 ">
         <figure className="px-5 lg:px-8 pt-5 lg:pt-8 flex-grow">
           <img
