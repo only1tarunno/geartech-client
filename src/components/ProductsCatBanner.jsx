@@ -3,8 +3,9 @@ import img1 from "../assets/pr-cat1.jpg";
 import img2 from "../assets/pr-cat2.jpg";
 import img3 from "../assets/pr-cat3.jpg";
 import img4 from "../assets/pr-cat4.jpg";
+import PropTypes from "prop-types";
 
-const ProductsCatBanner = () => {
+const ProductsCatBanner = ({ brand }) => {
   return (
     <div className="carousel w-full h-full">
       <div id="slide1" className="carousel-item relative w-full">
@@ -15,8 +16,8 @@ const ProductsCatBanner = () => {
           <div className="hero-overlay"></div>
           <div className="hero-content text-center text-neutral-content">
             <div className="max-w-2xl">
-              <h1 className="mb-8  text-4xl lg:text-5xl font-bold">
-                Discover the Latest Tech Gadgets
+              <h1 className="mb-8 capitalize  text-4xl lg:text-5xl font-bold">
+                Discover the Latest {brand} Gadgets
               </h1>
               <p className="mb-8 text-white">
                 Stay ahead in the world of technology with our handpicked
@@ -149,3 +150,6 @@ const ProductsCatBanner = () => {
 };
 
 export default ProductsCatBanner;
+ProductsCatBanner.propTypes = {
+  brand: PropTypes.string.isRequired,
+};

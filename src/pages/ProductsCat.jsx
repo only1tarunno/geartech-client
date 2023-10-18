@@ -9,15 +9,16 @@ const ProductsCat = () => {
 
   return (
     <div>
-      <div className="overflow-hidden h-[400px] lg:h-[600px]">
-        <ProductsCatBanner></ProductsCatBanner>
+      <div id="car" className="overflow-hidden h-[400px] lg:h-[600px]">
+        <ProductsCatBanner brand={brand}></ProductsCatBanner>
       </div>
       <div className="bg-[#eff4ff] py-10 md:py-20">
         <div>
-          <h2 className=" font-bold text-3xl lg:text-5xl text-center">
-            Our Products
+          <h2 className=" font-bold capitalize text-3xl lg:text-5xl text-center">
+            {brand} Products
           </h2>
         </div>
+
         <div className="mt-10 container mx-auto px-5 lg:px-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
           {products.length > 0 ? (
             products.map((product) => (
