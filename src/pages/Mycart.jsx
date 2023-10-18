@@ -8,7 +8,9 @@ const Mycart = () => {
   const email = user.email;
 
   useEffect(() => {
-    fetch(`http://localhost:5000/cart/${email}`)
+    fetch(
+      `https://assingment-10-server-pyypk1bbe-only1tarunnos-projects.vercel.app/cart/${email}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
@@ -26,9 +28,12 @@ const Mycart = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/cartDel/${id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://assingment-10-server-pyypk1bbe-only1tarunnos-projects.vercel.app/cartDel/${id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then(() => {
             const remaining = products.filter((product) => product._id !== id);

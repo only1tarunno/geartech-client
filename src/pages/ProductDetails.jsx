@@ -23,13 +23,16 @@ const ProductDetails = () => {
   };
 
   const handleAddToCart = () => {
-    fetch("http://localhost:5000/cart", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(cartProduct),
-    })
+    fetch(
+      "https://assingment-10-server-pyypk1bbe-only1tarunnos-projects.vercel.app/cart",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(cartProduct),
+      }
+    )
       .then((res) => res.json())
       .then(() => {
         Swal.fire({

@@ -21,13 +21,16 @@ const AddProduct = () => {
       description,
     };
 
-    fetch("http://localhost:5000/products", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(product),
-    })
+    fetch(
+      "https://assingment-10-server-pyypk1bbe-only1tarunnos-projects.vercel.app/products",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(product),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

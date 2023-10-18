@@ -26,7 +26,9 @@ const router = createBrowserRouter([
         path: "/brand/:brand",
         element: <ProductsCat></ProductsCat>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/products/${params.brand}`),
+          fetch(
+            `https://assingment-10-server-pyypk1bbe-only1tarunnos-projects.vercel.app/products/${params.brand}`
+          ),
       },
       {
         path: "/login",
@@ -52,7 +54,9 @@ const router = createBrowserRouter([
           </PvtRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/product/${params.id}`),
+          fetch(
+            `https://assingment-10-server-pyypk1bbe-only1tarunnos-projects.vercel.app/product/${params.id}`
+          ),
       },
       {
         path: "/updateProduct/:id",
@@ -62,7 +66,9 @@ const router = createBrowserRouter([
           </PvtRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/product/${params.id}`),
+          fetch(
+            `https://assingment-10-server-pyypk1bbe-only1tarunnos-projects.vercel.app/product/${params.id}`
+          ),
       },
 
       {

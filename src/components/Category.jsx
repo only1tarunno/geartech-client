@@ -6,7 +6,9 @@ const Category = () => {
   const { theme } = useContext(AuthContext);
   const [brands, setbrands] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/brands")
+    fetch(
+      "https://assingment-10-server-pyypk1bbe-only1tarunnos-projects.vercel.app/brands"
+    )
       .then((res) => res.json())
       .then((data) => setbrands(data));
   }, []);

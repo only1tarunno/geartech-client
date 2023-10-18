@@ -17,13 +17,16 @@ const UpdateProduct = () => {
 
     const product = { photo, name, brand, productType, price, rating };
 
-    fetch(`http://localhost:5000/product/${_id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(product),
-    })
+    fetch(
+      `https://assingment-10-server-pyypk1bbe-only1tarunnos-projects.vercel.app/product/${_id}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(product),
+      }
+    )
       .then((res) => res.json())
       .then(() => {
         navigate(-1);
