@@ -9,6 +9,7 @@ import ProductDetails from "../pages/ProductDetails";
 import UpdateProduct from "../pages/UpdateProduct";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
+import PvtRoute from "./PvtRoute";
 
 const router = createBrowserRouter([
   {
@@ -26,7 +27,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/updateProduct/:id",
-        element: <UpdateProduct></UpdateProduct>,
+        element: (
+          <PvtRoute>
+            <UpdateProduct></UpdateProduct>
+          </PvtRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/product/${params.id}`),
       },
@@ -42,7 +47,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/product/:id",
-        element: <ProductDetails></ProductDetails>,
+        element: (
+          <PvtRoute>
+            <ProductDetails></ProductDetails>
+          </PvtRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/product/${params.id}`),
       },
