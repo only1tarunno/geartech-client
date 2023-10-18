@@ -26,24 +26,18 @@ const router = createBrowserRouter([
         element: <AddProduct />,
       },
       {
-        path: "/updateProduct/:id",
-        element: (
-          <PvtRoute>
-            <UpdateProduct></UpdateProduct>
-          </PvtRoute>
-        ),
-        loader: ({ params }) =>
-          fetch(`http://localhost:5000/product/${params.id}`),
-      },
-      {
-        path: "/myCart",
-        element: <Mycart />,
-      },
-      {
         path: "/brand/:brand",
         element: <ProductsCat></ProductsCat>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/products/${params.brand}`),
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/register",
+        element: <Register></Register>,
       },
       {
         path: "/product/:id",
@@ -56,12 +50,23 @@ const router = createBrowserRouter([
           fetch(`http://localhost:5000/product/${params.id}`),
       },
       {
-        path: "/login",
-        element: <Login></Login>,
+        path: "/updateProduct/:id",
+        element: (
+          <PvtRoute>
+            <UpdateProduct></UpdateProduct>
+          </PvtRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/product/${params.id}`),
       },
+
       {
-        path: "/register",
-        element: <Register></Register>,
+        path: "/myCart",
+        element: (
+          <PvtRoute>
+            <Mycart />
+          </PvtRoute>
+        ),
       },
     ],
   },

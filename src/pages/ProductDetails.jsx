@@ -1,13 +1,43 @@
 import { useLoaderData } from "react-router-dom";
 import { FaDollarSign } from "react-icons/fa6";
+import { AuthContext } from "../Provides/AuthProvider";
+import { useContext } from "react";
+import Swal from "sweetalert2";
 
 const ProductDetails = () => {
   const product = useLoaderData();
+  const { user } = useContext(AuthContext);
+  const email = user.email;
   const { _id, photo, name, brand, productType, price, rating, description } =
     product;
 
-  const handleAddToCart = (id) => {
-    console.log(id);
+  const cartProduct = {
+    photo,
+    name,
+    brand,
+    productType,
+    price,
+    rating,
+    description,
+    email,
+  };
+
+  const handleAddToCart = () => {
+    fetch("http://localhost:5000/cart", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(cartProduct),
+    })
+      .then((res) => res.json())
+      .then(() => {
+        Swal.fire({
+          title: "Product Added into Cart",
+          text: "Please Check My cart page",
+          icon: "success",
+        });
+      });
   };
   return (
     <div className="container mx-auto px-5 lg:px-0 flex items-center justify-between flex-wrap py-10 md:py-20 space-y-5 md:space-y-16">
@@ -67,7 +97,7 @@ const ProductDetails = () => {
         </div>
         <div>
           <button
-            onClick={() => handleAddToCart(_id)}
+            onClick={handleAddToCart}
             className="btn body-btn bg-[#54595f] hover:bg-[#3b3e42] border-[#54595f] hover:text-white text-white text-base md:text-xl"
           >
             Add to Cart

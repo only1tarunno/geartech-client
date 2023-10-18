@@ -1,7 +1,8 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const UpdateProduct = () => {
+  const navigate = useNavigate();
   const product = useLoaderData();
   const { _id, photo, name, brand, productType, price, rating } = product;
   const handleUpdateproduct = (e) => {
@@ -24,9 +25,8 @@ const UpdateProduct = () => {
       body: JSON.stringify(product),
     })
       .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        form.reset();
+      .then(() => {
+        navigate(-1);
         Swal.fire({
           title: "Product is Updated",
           icon: "success",
