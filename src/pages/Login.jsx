@@ -80,12 +80,12 @@ const Login = () => {
             <input
               type="submit"
               value="LogIn"
-              className="w-full my-4 py-3 cursor-pointer text-xl text-white bg-[#203872] hover:bg-[#de2440]"
+              className="w-full my-4 py-3 cursor-pointer text-xl bg-[#54595f] hover:bg-[#323538] border-[#54595f] hover:text-white text-white"
             />
           </form>
           <p className="text-center">
             Don’t have an account?{" "}
-            <Link to="/register" className="font-bold text-[#203872]">
+            <Link to="/register" className="font-bold text-[#323538]">
               Create an account
             </Link>
           </p>
@@ -95,7 +95,7 @@ const Login = () => {
             <div className="divider">OR</div>
             <div
               onClick={glogin}
-              className="w-full flex justify-center items-center mt-5 border border-[#C7C7C7] bg-[#203872] cursor-pointer btn"
+              className="w-full flex justify-center items-center mt-5 border border-[#C7C7C7] bg-[#54595f] hover:bg-[#323538] text-white cursor-pointer btn"
             >
               <span>
                 <img src={gg} className="w-5" alt="" />

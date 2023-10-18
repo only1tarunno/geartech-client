@@ -1,7 +1,12 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
+import { AuthContext } from "../Provides/AuthProvider";
+import { useContext } from "react";
+import userimg from "../assets/user.png";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+  const navigate = useNavigate();
   const links = (
     <>
       <li>
@@ -15,6 +20,10 @@ const Navbar = () => {
       </li>
     </>
   );
+
+  const handleLogOut = () => {
+    logOut().then(navigate("/login")).catch();
+  };
 
   return (
     <div className="bg-[#5e5e5e]">
@@ -57,12 +66,31 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <Link
-            className="btn text-base md:text-xl text-white bg-[#494848] border-[#494848] hover:border-[#3b3b3b] hover:bg-[#3b3b3b]"
-            to="/login"
-          >
-            Login
-          </Link>
+          {user ? (
+            <div className="flex flex-col lg:flex-row items-center gap-2">
+              <h2 className="text-white text-xl font-bold">
+                {user.displayName ? user.displayName : "User"}
+              </h2>
+              <img
+                className="w-10 rounded-full object-cover"
+                src={user?.photoURL ? user.photoURL : userimg}
+                alt=""
+              />
+              <button
+                onClick={handleLogOut}
+                className="btn text-base md:text-xl text-white bg-[#494848] border-[#494848] hover:border-[#3b3b3b] hover:bg-[#3b3b3b]"
+              >
+                Logout
+              </button>
+            </div>
+          ) : (
+            <Link
+              className="btn text-base md:text-xl text-white bg-[#494848] border-[#494848] hover:border-[#3b3b3b] hover:bg-[#3b3b3b]"
+              to="/login"
+            >
+              Login
+            </Link>
+          )}
         </div>
       </div>
     </div>
