@@ -21,10 +21,7 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home />,
       },
-      {
-        path: "/addProduct",
-        element: <AddProduct />,
-      },
+
       {
         path: "/brand/:brand",
         element: <ProductsCat></ProductsCat>,
@@ -38,6 +35,14 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/addProduct",
+        element: (
+          <PvtRoute>
+            <AddProduct />
+          </PvtRoute>
+        ),
       },
       {
         path: "/product/:id",

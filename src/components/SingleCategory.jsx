@@ -1,10 +1,17 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../Provides/AuthProvider";
+import { useContext } from "react";
 
 const SingleCategory = ({ brand }) => {
+  const { theme } = useContext(AuthContext);
   return (
     <Link className="inline-block" to={`/brand/${brand.name}`}>
-      <div className="card h-full bg-base-100 ">
+      <div
+        className={`card h-full ${
+          theme == "light" ? "bg-base-100" : "bg-white"
+        }`}
+      >
         <figure className="px-5 lg:px-8 pt-5 lg:pt-8 flex-grow">
           <img
             src={brand.image}

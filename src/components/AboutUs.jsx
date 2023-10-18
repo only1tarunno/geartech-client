@@ -1,7 +1,7 @@
 import about from "../assets/about.jpg";
 const AboutUs = () => {
   return (
-    <div className="flex flex-col lg:flex-row justify-between gap-10 lg:gap-0 items-center container mx-auto px-5 lg:px-0 my-14">
+    <div className="flex flex-col lg:flex-row justify-between gap-10 lg:gap-0 items-center container mx-auto px-5 lg:px-0 py-14">
       <div className="flex-1">
         <img src={about} className="w-full lg:w-3/4 lg:mx-auto" alt="" />
       </div>

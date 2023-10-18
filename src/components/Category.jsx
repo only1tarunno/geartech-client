@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import SingleCategory from "./SingleCategory";
+import { AuthContext } from "../Provides/AuthProvider";
 
 const Category = () => {
+  const { theme } = useContext(AuthContext);
   const [brands, setbrands] = useState([]);
   useEffect(() => {
     fetch("http://localhost:5000/brands")
@@ -10,26 +12,30 @@ const Category = () => {
   }, []);
 
   return (
-    <div className="bg-[#eff4ff] py-10 md:py-20">
+    <div
+      className={`py-10 md:py-20 ${
+        theme == "light" ? "bg-[#eff4ff]" : "bg-slate-800"
+      }`}
+    >
       <div className="container mx-auto px-5 lg:px-0">
         <h3
-          data-aos="fade-up"
-          data-aos-duration="500"
-          className="text-[#5e5e5e] font-bold text-xl lg:text-3xl text-center"
+          className={`${
+            theme == "light" ? "text-[#5e5e5e]" : "text-white"
+          } font-bold text-xl lg:text-3xl text-center`}
         >
           GearTech Collections
         </h3>
         <h2
-          data-aos="fade-up"
-          data-aos-duration="1000"
-          className="pb-3 text-[#0a0b09] text-3xl text-center my-3 lg:text-5xl font-bold"
+          className={`pb-3 ${
+            theme == "light" ? "text-[#0a0b09]" : "text-white"
+          } text-3xl text-center my-3 lg:text-5xl font-bold`}
         >
           Features Brands
         </h2>
         <p
-          data-aos="fade-up"
-          data-aos-duration="1500"
-          className="text-base text-center lg:text-lg max-w-[700px] mx-auto"
+          className={`text-base text-center ${
+            theme == "dark" && "text-white"
+          }  lg:text-lg max-w-[700px] mx-auto`}
         >
           Embrace a healthier, more connected lifestyle with wearable
           technology. Dive into the realm of fitness trackers, smartwatches, and

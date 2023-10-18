@@ -15,6 +15,7 @@ export const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [spiner, setSpinner] = useState(true);
+  const [theme, setTheme] = useState("light");
   const provider = new GoogleAuthProvider();
 
   // Google Login
@@ -58,6 +59,8 @@ const AuthProvider = ({ children }) => {
     logOut,
     googleLogin,
     setUser,
+    theme,
+    setTheme,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

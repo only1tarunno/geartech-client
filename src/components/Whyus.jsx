@@ -1,23 +1,40 @@
+import { useContext } from "react";
+import { AuthContext } from "../Provides/AuthProvider";
 import why from "../assets/why.jpg";
 
 const Whyus = () => {
+  const { theme } = useContext(AuthContext);
   return (
     <div className=" md:py-20 py-16 ">
       <div className="container mx-auto px-5 lg:px-0">
-        <h2 className="pb-3 text-[#0a0b09] text-3xl text-center my-3 lg:text-5xl font-bold">
+        <h2
+          className={`pb-3 ${
+            theme == "light" ? "text-[#0a0b09]" : "text-white"
+          } text-3xl text-center my-3 lg:text-5xl font-bold`}
+        >
           Why Choose Us?
         </h2>
         <div className="flex flex-col-reverse lg:flex-row gap-5 lg:gap-10 items-center justify-between mt-8 lg:mt-14">
           <div className="flex-1 space-y-5 text-center lg:text-start">
             <div>
-              <h3 className=" text-2xl text-[#5e5e5e] font-bold">Expertise</h3>
+              <h3
+                className={`text-2xl ${
+                  theme == "light" ? "text-[#5e5e5e]" : "text-white"
+                } font-bold`}
+              >
+                Expertise
+              </h3>
               <p className="text-base lg:text-lg mt-1">
                 We have a team of tech enthusiasts and experts who are
                 passionate about sharing their knowledge and insights
               </p>
             </div>
             <div>
-              <h3 className=" text-2xl text-[#5e5e5e] font-bold">
+              <h3
+                className={`text-2xl ${
+                  theme == "light" ? "text-[#5e5e5e]" : "text-white"
+                } font-bold`}
+              >
                 Cutting-Edge Content
               </h3>
               <p className="text-base lg:text-lg mt-1">
@@ -26,7 +43,11 @@ const Whyus = () => {
               </p>
             </div>
             <div>
-              <h3 className=" text-2xl text-[#5e5e5e] font-bold">
+              <h3
+                className={`text-2xl ${
+                  theme == "light" ? "text-[#5e5e5e]" : "text-white"
+                } font-bold`}
+              >
                 Unbiased Reviews
               </h3>
               <p className="text-base lg:text-lg mt-1">
@@ -35,7 +56,11 @@ const Whyus = () => {
               </p>
             </div>
             <div>
-              <h3 className=" text-2xl text-[#5e5e5e] font-bold">
+              <h3
+                className={`text-2xl ${
+                  theme == "light" ? "text-[#5e5e5e]" : "text-white"
+                } font-bold`}
+              >
                 In-Depth Analysis
               </h3>
               <p className="text-base lg:text-lg mt-1">
@@ -44,7 +69,11 @@ const Whyus = () => {
               </p>
             </div>
             <div>
-              <h3 className=" text-2xl text-[#5e5e5e] font-bold">
+              <h3
+                className={`text-2xl ${
+                  theme == "light" ? "text-[#5e5e5e]" : "text-white"
+                } font-bold`}
+              >
                 User-Friendly Interface
               </h3>
               <p className="text-base lg:text-lg mt-1">
@@ -53,7 +82,11 @@ const Whyus = () => {
               </p>
             </div>
             <div>
-              <h3 className=" text-2xl text-[#5e5e5e] font-bold">
+              <h3
+                className={`text-2xl ${
+                  theme == "light" ? "text-[#5e5e5e]" : "text-white"
+                } font-bold`}
+              >
                 Community Engagement
               </h3>
               <p className="text-base lg:text-lg mt-1">
