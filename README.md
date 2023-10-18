@@ -12,3 +12,4 @@ Different features and functionalities of my website::
 - Before Deleting a product from cart page user will get a toast for confirming their delete action
 - User can register in the website with their email and pass or they can use their google account for log in
 - User will get sweetAlert when they tries to login/register. If they face any error also they will get sweetAlert message
+- In every brand category redicts a route where specific products will show based on category. If any category have no products then it will show message about 0 product
