@@ -22,7 +22,7 @@ const AddProduct = () => {
     };
 
     fetch(
-      "https://assingment-10-server-pyypk1bbe-only1tarunnos-projects.vercel.app/products",
+      "https://assingment-10-server-qofmekhcb-only1tarunnos-projects.vercel.app/products",
       {
         method: "POST",
         headers: {
