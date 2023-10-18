@@ -33,3 +33,10 @@ body {
   background-color: #54595f;
   border-color: #54595f;
 }
+
+.text-control {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}

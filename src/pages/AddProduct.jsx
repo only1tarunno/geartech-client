@@ -1,3 +1,5 @@
+import Swal from "sweetalert2";
+
 const AddProduct = () => {
   const handleAddproduct = (e) => {
     e.preventDefault();
@@ -9,7 +11,33 @@ const AddProduct = () => {
     const price = form.price.value;
     const rating = form.rating.value;
     const description = form.description.value;
-    console.log(photo, name, brand, productType, price, rating, description);
+    const product = {
+      photo,
+      name,
+      brand,
+      productType,
+      price,
+      rating,
+      description,
+    };
+
+    fetch("http://localhost:5000/products", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(product),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        form.reset();
+        Swal.fire({
+          title: "Product is Added",
+          text: "Please add more",
+          icon: "success",
+        });
+      });
   };
   return (
     <div className="container mx-auto px-5 lg:px-0 py-12">
@@ -74,6 +102,8 @@ const AddProduct = () => {
                 <option value="phone">phone</option>
                 <option value="computer">computer</option>
                 <option value="headphone">headphone</option>
+                <option value="watch">watch</option>
+                <option value="pad">pad</option>
               </select>
             </div>
           </div>
@@ -83,7 +113,7 @@ const AddProduct = () => {
                 <span className="label-text">Price</span>
               </label>
               <input
-                type="text"
+                type="number"
                 id="price"
                 placeholder="price"
                 className="input input-bordered"

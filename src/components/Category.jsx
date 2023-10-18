@@ -1,6 +1,14 @@
-import apple from "../assets/apple.png";
+import { useEffect, useState } from "react";
+import SingleCategory from "./SingleCategory";
 
 const Category = () => {
+  const [brands, setbrands] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:5000/brands")
+      .then((res) => res.json())
+      .then((data) => setbrands(data));
+  }, []);
+
   return (
     <div className="bg-[#eff4ff] py-10 md:py-20">
       <div className="container mx-auto px-5 lg:px-0">
@@ -28,17 +36,9 @@ const Category = () => {
           health monitoring devices. .
         </p>
         <div className="mt-10  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {/* card  */}
-          <div className="card  bg-base-100 ">
-            <figure className="px-5 lg:px-8 pt-5 lg:pt-8">
-              <img src={apple} alt="" className="rounded-xl" />
-            </figure>
-            <div className="card-body  items-center text-center">
-              <h2 className="card-title text-[#0a0b09] text-2xl font-bold">
-                Apple
-              </h2>
-            </div>
-          </div>
+          {brands.map((brand) => (
+            <SingleCategory key={brand.id} brand={brand}></SingleCategory>
+          ))}
         </div>
       </div>
     </div>
