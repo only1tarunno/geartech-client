@@ -72,12 +72,12 @@ const Product = ({ product }) => {
           </p>
         </div>
         <div className="mt-4 flex items-center justify-center gap-5">
-          <Link to={`/service/${_id}`}>
+          <Link to={`/product/${_id}`}>
             <button className="btn body-btn bg-[#54595f] hover:bg-[#3b3e42] border-[#54595f] hover:text-white text-white text-base md:text-xl">
               Details
             </button>
           </Link>
-          <Link to={`/service/${_id}`}>
+          <Link to={`/product/${_id}`}>
             <button className="btn body-btn bg-transparent text-[#0a0b09] hover:text-white border-[#54595f] text-base md:text-xl">
               Update
             </button>
