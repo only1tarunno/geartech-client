@@ -7,7 +7,7 @@ const Category = () => {
   const [brands, setbrands] = useState([]);
   useEffect(() => {
     fetch(
-      "https://assingment-10-server-qofmekhcb-only1tarunnos-projects.vercel.app/brands"
+      "https://assingment-10-server-n7a8dql02-only1tarunnos-projects.vercel.app/brands"
     )
       .then((res) => res.json())
       .then((data) => setbrands(data));
