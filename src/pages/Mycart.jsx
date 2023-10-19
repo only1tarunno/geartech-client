@@ -9,7 +9,7 @@ const Mycart = () => {
 
   useEffect(() => {
     fetch(
-      `https://assingment-10-server-n7a8dql02-only1tarunnos-projects.vercel.app/cart/${email}`
+      `https://assingment-10-server-fdtx92tq3-only1tarunnos-projects.vercel.app/cart/${email}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -29,7 +29,7 @@ const Mycart = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         fetch(
-          `https://assingment-10-server-n7a8dql02-only1tarunnos-projects.vercel.app/cartDel/${id}`,
+          `https://assingment-10-server-fdtx92tq3-only1tarunnos-projects.vercel.app/cartDel/${id}`,
           {
             method: "DELETE",
           }

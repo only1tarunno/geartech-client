@@ -27,7 +27,7 @@ const router = createBrowserRouter([
         element: <ProductsCat></ProductsCat>,
         loader: ({ params }) =>
           fetch(
-            `https://assingment-10-server-n7a8dql02-only1tarunnos-projects.vercel.app/products/${params.brand}`
+            `https://assingment-10-server-fdtx92tq3-only1tarunnos-projects.vercel.app/products/${params.brand}`
           ),
       },
       {
@@ -55,7 +55,7 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `https://assingment-10-server-n7a8dql02-only1tarunnos-projects.vercel.app/product/${params.id}`
+            `https://assingment-10-server-fdtx92tq3-only1tarunnos-projects.vercel.app/product/${params.id}`
           ),
       },
       {
@@ -67,7 +67,7 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `https://assingment-10-server-n7a8dql02-only1tarunnos-projects.vercel.app/product/${params.id}`
+            `https://assingment-10-server-fdtx92tq3-only1tarunnos-projects.vercel.app/product/${params.id}`
           ),
       },
 

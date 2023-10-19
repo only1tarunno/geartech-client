@@ -18,7 +18,7 @@ const UpdateProduct = () => {
     const product = { photo, name, brand, productType, price, rating };
 
     fetch(
-      `https://assingment-10-server-n7a8dql02-only1tarunnos-projects.vercel.app/product/${_id}`,
+      `https://assingment-10-server-fdtx92tq3-only1tarunnos-projects.vercel.app/product/${_id}`,
       {
         method: "PUT",
         headers: {
