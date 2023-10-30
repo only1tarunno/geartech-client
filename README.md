@@ -1,6 +1,6 @@
 # GearTech
 
-Live Link: geartech-e9eeb.web.app
+Live Link: https://geartech-e9eeb.web.app/
 
 Different features and functionalities of my website::
 
