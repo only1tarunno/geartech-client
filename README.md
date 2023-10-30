@@ -1,6 +1,6 @@
 # GearTech
 
-Live Link: https://assingment-10-5eb32.web.app/
+Live Link: geartech-e9eeb.web.app
 
 Different features and functionalities of my website::
 
