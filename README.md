@@ -1,6 +1,9 @@
 # GearTech
 
 Live Link: https://geartech-e9eeb.web.app/
+<br>
+Server Repo: https://github.com/only1tarunno/geartech-server
+<br>
 
 Different features and functionalities of my website::
 
